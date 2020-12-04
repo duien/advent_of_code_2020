@@ -1,7 +1,8 @@
 defmodule AdventOfCode2020 do
   @days %{
    1 => AdventOfCode2020.ReportRepair,
-   2 => AdventOfCode2020.PasswordPhilosophy
+   2 => AdventOfCode2020.PasswordPhilosophy,
+   3 => AdventOfCode2020.TobogganTrajectory
   }
 
   def day(n) do
