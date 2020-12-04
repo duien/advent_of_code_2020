@@ -1,18 +1,14 @@
 defmodule AdventOfCode2020 do
-  @moduledoc """
-  Documentation for `AdventOfCode2020`.
-  """
+  @days %{
+   1 => AdventOfCode2020.ReportRepair,
+  }
 
-  @doc """
-  Hello world.
+  def day(n) do
+    Map.get(@days, n)
+  end
 
-  ## Examples
-
-      iex> AdventOfCode2020.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def days do
+    @days
+    |> Map.values
   end
 end
