@@ -23,11 +23,16 @@ defmodule AdventOfCode2020.ReportRepair do
     |> process_input
 
     [a,b] = report_amounts
-    |> Enum.filter(fn amount ->
-      Enum.member?(report_amounts, 2020-amount)
-    end)
+    |> entries_with_sum(2020)
 
     a * b
+  end
+
+  defp entries_with_sum(list, sum) do
+    list
+    |> Enum.filter(fn amount ->
+      Enum.member?(list, sum - amount)
+    end)
   end
 
   @doc """
@@ -43,6 +48,17 @@ defmodule AdventOfCode2020.ReportRepair do
       241861950
   """
   def more_bad_entries(input \\ file_input()) do
+    report_amounts = input
+    |> process_input
+
+    [a,b,c] = report_amounts
+    |> Enum.reject(fn amount ->
+      report_amounts
+      |> entries_with_sum(2020 - amount)
+      |> Enum.empty?
+    end)
+    
+    a * b * c
   end
 
   defp process_input(text) do
