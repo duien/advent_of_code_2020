@@ -5,4 +5,5 @@ defmodule AdventOfCode2020Test do
   doctest AdventOfCode2020.PasswordPhilosophy
   doctest AdventOfCode2020.TobogganTrajectory
   doctest AdventOfCode2020.PassportProcessing
+  doctest AdventOfCode2020.BinaryBoarding
 end

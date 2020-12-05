@@ -3,7 +3,8 @@ defmodule AdventOfCode2020 do
    1 => AdventOfCode2020.ReportRepair,
    2 => AdventOfCode2020.PasswordPhilosophy,
    3 => AdventOfCode2020.TobogganTrajectory,
-   4 => AdventOfCode2020.PassportProcessing
+   4 => AdventOfCode2020.PassportProcessing,
+   5 => AdventOfCode2020.BinaryBoarding
   }
 
   def day(n) do
