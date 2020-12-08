@@ -5,7 +5,8 @@ defmodule AdventOfCode2020 do
    3 => AdventOfCode2020.TobogganTrajectory,
    4 => AdventOfCode2020.PassportProcessing,
    5 => AdventOfCode2020.BinaryBoarding,
-   6 => AdventOfCode2020.CustomCustoms
+   6 => AdventOfCode2020.CustomCustoms,
+   7 => AdventOfCode2020.HandyHaversacks
   }
 
   def day(n) do
