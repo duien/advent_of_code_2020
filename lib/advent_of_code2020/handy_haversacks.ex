@@ -26,13 +26,80 @@ defmodule AdventOfCode2020.HandyHaversacks do
     |> process_input
     |> Enum.map(&parse_rule/1)
 
-    rules
+    container = rules
     |> could_contain(["shiny gold"])
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    container = rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+
+    old_container = container
+    rules
+    |> could_contain(container)
+    |> Enum.concat(old_container)
+    |> Enum.uniq
+    |> Enum.count
+  end
+
+  @doc """
+  Examples:
+      iex> AdventOfCode2020.HandyHaversacks.count_containing_colors(\"\"\"
+      ...> light red bags contain 1 bright white bag, 2 muted yellow bags.
+      ...> dark orange bags contain 3 bright white bags, 4 muted yellow bags.
+      ...> bright white bags contain 1 shiny gold bag.
+      ...> muted yellow bags contain 2 shiny gold bags, 9 faded blue bags.
+      ...> shiny gold bags contain 1 dark olive bag, 2 vibrant plum bags.
+      ...> dark olive bags contain 3 faded blue bags, 4 dotted black bags.
+      ...> vibrant plum bags contain 5 faded blue bags, 6 dotted black bags.
+      ...> faded blue bags contain no other bags.
+      ...> dotted black bags contain no other bags.
+      ...> \"\"\")
+      126
+  """
+  def count_inner_containers(input \\ file_input()) do
   end
 
   def could_contain(rules, colors) do
     rules
-    |> Enum.filter(fn {color, inner} ->
+    |> Enum.filter(fn {_, inner} ->
       inner
       |> Enum.any?(fn {_, color} ->
         Enum.member?(colors, color)
