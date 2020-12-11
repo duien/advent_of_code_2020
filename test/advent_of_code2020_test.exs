@@ -8,4 +8,5 @@ defmodule AdventOfCode2020Test do
   doctest AdventOfCode2020.BinaryBoarding
   doctest AdventOfCode2020.CustomCustoms
   doctest AdventOfCode2020.HandyHaversacks
+  doctest AdventOfCode2020.HandheldHalting
 end
